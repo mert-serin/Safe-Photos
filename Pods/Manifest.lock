@@ -1,15 +1,18 @@
 PODS:
-  - Alamofire (4.0.0)
-  - Kingfisher (3.0.1)
+  - Alamofire (3.5.0)
+  - HanekeSwift (0.10.1)
+  - KVNProgress (2.3.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
-  - Kingfisher (~> 3.0)
+  - Alamofire (~> 3.5.0)
+  - HanekeSwift
+  - KVNProgress
 
 SPEC CHECKSUMS:
-  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
-  Kingfisher: d5a491b45ea453d90a31bd2c0831d5243e73a73f
+  Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
+  HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
+  KVNProgress: 8167b1f19e2758290c0b6143020ed9dcbb0477a1
 
-PODFILE CHECKSUM: c0d1021df117aafddb64762e064dbc8a166aaaeb
+PODFILE CHECKSUM: b1c755312d460615fb907a2325423d3faf813b2e
 
 COCOAPODS: 1.0.1

@@ -8,17 +8,15 @@
 
 import UIKit
 
-import UIKit
-
 class TutorialPageViewController: UIPageViewController {
     
     weak var tutorialDelegate: TutorialPageViewControllerDelegate?
     
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         // The view controllers will be shown in this order
-        return [self.newViewController(index:"1"),
-                self.newViewController(index:"2"),
-                self.newViewController(index:"3")]
+        return [self.newViewController("1"),
+                self.newViewController("2"),
+                self.newViewController("3")]
     }()
     
     override func viewDidLoad() {
@@ -31,7 +29,7 @@ class TutorialPageViewController: UIPageViewController {
             scrollToViewController(initialViewController)
         }
         
-        tutorialDelegate?.tutorialPageViewController(tutorialPageViewController:self,
+        tutorialDelegate?.tutorialPageViewController(self,
                                                      didUpdatePageCount: orderedViewControllers.count)
     }
     
@@ -124,7 +122,7 @@ extension TutorialPageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController,
                             viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
+        guard let viewControllerIndex = orderedViewControllers.indexOf(viewController) else {
             return nil
         }
         
@@ -150,8 +148,8 @@ extension TutorialPageViewController: UIPageViewControllerDelegate {
     
     func pageViewController(pageViewController: UIPageViewController,
                             didFinishAnimating finished: Bool,
-                            previousViewControllers: [UIViewController],
-                            transitionCompleted completed: Bool) {
+                                               previousViewControllers: [UIViewController],
+                                               transitionCompleted completed: Bool) {
         notifyTutorialDelegateOfNewIndex()
     }
     
