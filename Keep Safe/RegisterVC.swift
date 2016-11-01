@@ -175,6 +175,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate{
                     }
                     else{
                         //No problem
+                        User(email: email, password: self.password).setUserDefaults()
                         KVNProgress.dismissWithCompletion({
                             NSNotificationCenter.defaultCenter().postNotificationName("showLanding2", object: nil)
                         })

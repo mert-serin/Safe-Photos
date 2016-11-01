@@ -21,5 +21,14 @@ class User{
         self.password = password
         
     }
+    
+    
+    
+    //MARK: setUserDefaults
+    func setUserDefaults(){
+        userDefaults.setObject(self.email!, forKey: "email")
+        userDefaults.setObject(self.password!, forKey: "password")
+    }
+    
 
 }

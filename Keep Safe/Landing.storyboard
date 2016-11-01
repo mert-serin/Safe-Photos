@@ -94,7 +94,7 @@
         <!--Menu ControllerVC-->
         <scene sceneID="xBp-Vs-AjF">
             <objects>
-                <viewController id="c3m-d0-xe4" customClass="MenuControllerVC" customModule="Keep_Safe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="menuControllerVC" id="c3m-d0-xe4" customClass="MenuControllerVC" customModule="Keep_Safe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UbW-tg-fvr"/>
                         <viewControllerLayoutGuide type="bottom" id="0vy-Ld-dTg"/>

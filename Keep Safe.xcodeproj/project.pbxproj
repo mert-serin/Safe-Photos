@@ -19,6 +19,7 @@
 		4E65AB1A1DC8954000386870 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E65AB191DC8954000386870 /* LoginVC.swift */; };
 		4E65AB1C1DC8B72B00386870 /* SafeBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E65AB1B1DC8B72B00386870 /* SafeBrain.swift */; };
 		4EC1FB121DC93C5000B6C7E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1FB111DC93C5000B6C7E3 /* User.swift */; };
+		4EC1FB141DC941F100B6C7E3 /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1FB131DC941F100B6C7E3 /* PhotoManager.swift */; };
 		4EF3EC511DC88365003C9A03 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3EC501DC88365003C9A03 /* Constants.swift */; };
 		4EF3EC531DC883A4003C9A03 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3EC521DC883A4003C9A03 /* APIClient.swift */; };
 		E5292B810C7687E61A3FDB8F /* Pods_Keep_Safe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE58BA611CDC869FF8EF57FB /* Pods_Keep_Safe.framework */; };
@@ -41,6 +42,7 @@
 		4E65AB191DC8954000386870 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		4E65AB1B1DC8B72B00386870 /* SafeBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeBrain.swift; sourceTree = "<group>"; };
 		4EC1FB111DC93C5000B6C7E3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4EC1FB131DC941F100B6C7E3 /* PhotoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
 		4EF3EC501DC88365003C9A03 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4EF3EC521DC883A4003C9A03 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		DE58BA611CDC869FF8EF57FB /* Pods_Keep_Safe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Keep_Safe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,7 @@
 				4EF3EC501DC88365003C9A03 /* Constants.swift */,
 				4EF3EC521DC883A4003C9A03 /* APIClient.swift */,
 				4E65AB1B1DC8B72B00386870 /* SafeBrain.swift */,
+				4EC1FB131DC941F100B6C7E3 /* PhotoManager.swift */,
 				4EC1FB111DC93C5000B6C7E3 /* User.swift */,
 			);
 			name = Model;
@@ -274,6 +277,7 @@
 			files = (
 				4EF3EC511DC88365003C9A03 /* Constants.swift in Sources */,
 				4E3D5AEC1DC746A8005AD4E8 /* MenuControllerVC.swift in Sources */,
+				4EC1FB141DC941F100B6C7E3 /* PhotoManager.swift in Sources */,
 				4E65AB1C1DC8B72B00386870 /* SafeBrain.swift in Sources */,
 				4E65AB1A1DC8954000386870 /* LoginVC.swift in Sources */,
 				4E5FDADF1DC806310049592D /* RegisterVC.swift in Sources */,

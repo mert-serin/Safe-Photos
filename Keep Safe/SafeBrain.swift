@@ -46,6 +46,21 @@ class SafeBrain: NSCoder{
     
     
     
+    func getIDForGuest() -> String{
+        if let guestPhotoID = userDefaults.objectForKey("guestPhotoID") as? String{
+            print("mert12")
+            return guestPhotoID
+        }
+        else{
+            print("mert13")
+            userDefaults.setObject("0", forKey: "guestPhotoID")
+            return "0"
+        }
+        
+        
+    }
+    
+    
     
     
 }

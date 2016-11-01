@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import AVFoundation
+import MediaPlayer
 class LoginVC: UIViewController, UITextFieldDelegate{
     
     //MARK: Public API
@@ -18,12 +19,36 @@ class LoginVC: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var digitFive: UITextField!
     @IBOutlet weak var digitSix: UITextField!
     
+    @IBOutlet weak var loginView: UIView!
+    
+    var myVideoLayer:AVCaptureVideoPreviewLayer?
+    var myDevice : AVCaptureDevice?
+    private var myVideoOutPut:AVCaptureMovieFileOutput!
+    
+    var mySession: AVCaptureSession?
+    var myImageOutput: AVCaptureStillImageOutput?
+    var previewLayer : AVCaptureVideoPreviewLayer?
+
+    
+    var position: AVCaptureDevicePosition?
+    
     var password = String()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        textfieldInitialize()
+        
+        backgroundCameraInitialize()
 
+        
+        
+    }
+    
+    
+    //MARK: textFieldInitialize ~ delegate and function for 6 textfield
+    func textfieldInitialize(){
         digitOne.delegate = self
         digitTwo.delegate = self
         digitThree.delegate = self
@@ -40,6 +65,66 @@ class LoginVC: UIViewController, UITextFieldDelegate{
         digitFive.addTarget(self, action: #selector(RegisterVC.textFieldChanged(_:)), forControlEvents: .EditingChanged)
         digitSix.addTarget(self, action: #selector(RegisterVC.textFieldChanged(_:)), forControlEvents: .EditingChanged)
     }
+    
+    
+    
+    //MARK: backgroundCameraInitialize ~ add camera to background for unplesant guest
+    func backgroundCameraInitialize(){
+
+        mySession = AVCaptureSession()
+        mySession?.sessionPreset = AVCaptureSessionPresetHigh
+        
+        
+        myImageOutput = AVCaptureStillImageOutput()
+        
+        let devices = AVCaptureDevice.devices()
+        
+        position = AVCaptureDevicePosition.Front
+        
+        for device in devices {
+            if (device.position == position!){
+                myDevice = device as! AVCaptureDevice
+            }
+        }
+        
+        do{
+            let videoCaptureDevice = myDevice
+            let videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
+            if (mySession!.canAddInput(videoInput)){
+                mySession!.addInput(videoInput)
+            }
+        }catch let error as NSError{
+            
+        }
+        
+        
+        
+        
+        
+        mySession!.addOutput(myImageOutput)
+        
+        myVideoOutPut = AVCaptureMovieFileOutput()
+        
+        mySession!.addOutput(myVideoOutPut)
+        
+        myVideoLayer = AVCaptureVideoPreviewLayer(session: mySession)
+        myVideoLayer!.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        myVideoLayer!.videoGravity = AVLayerVideoGravityResizeAspectFill
+        myVideoLayer!.connection.videoOrientation = AVCaptureVideoOrientation.Portrait
+        self.view.layer.addSublayer(myVideoLayer!)
+        // Initialize a AVCaptureMetadataOutput object and set it as the output device to the capture session.
+        let captureMetadataOutput = AVCaptureMetadataOutput()
+        mySession?.addOutput(captureMetadataOutput)
+        
+        // Set delegate and use the default dispatch queue to execute the call back
+
+
+        mySession!.startRunning()
+        
+        self.view.bringSubviewToFront(loginView)
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -66,6 +151,7 @@ class LoginVC: UIViewController, UITextFieldDelegate{
             textFieldOperation(sender, index: 5)
         }
     }
+    
 
     
     
@@ -100,14 +186,38 @@ class LoginVC: UIViewController, UITextFieldDelegate{
         }
     }
     
+    
+    func takePhotoGuest(){
+        if let videoConnection = self.myImageOutput?.connectionWithMediaType(AVMediaTypeVideo){
+            self.myImageOutput?.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler: {
+                (sampleBuffer, error) in
+                
+                if sampleBuffer != nil {
+
+                    let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
+                    print(PhotoManager().saveImageForUnplesantGuest(imageData))
+                        
+                }
+                
+                
+            })
+        }
+        
+    }
+    
+    
+    //MARK: checkPassword ~ login authorization
     func checkPassword(password:String){
         //Is password correct
         if(SafeBrain().checkForLogin(password)){
-            
+            print("mert1")
         }
         //Else take a photo of unplesant guest
         else{
-            
+            self.view.shake()
+            digitOne.becomeFirstResponder()
+            clearAll(0)
+            takePhotoGuest()
         }
         
     }
