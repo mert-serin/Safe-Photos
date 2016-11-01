@@ -8,7 +8,8 @@
 
 import UIKit
 import AVFoundation
-import MediaPlayer
+import LocalAuthentication
+
 class LoginVC: UIViewController, UITextFieldDelegate{
     
     //MARK: Public API
@@ -210,7 +211,8 @@ class LoginVC: UIViewController, UITextFieldDelegate{
     func checkPassword(password:String){
         //Is password correct
         if(SafeBrain().checkForLogin(password)){
-            print("mert1")
+            self.view.endEditing(true)
+            touchIDAuth()
         }
         //Else take a photo of unplesant guest
         else{
@@ -220,6 +222,31 @@ class LoginVC: UIViewController, UITextFieldDelegate{
             takePhotoGuest()
         }
         
+    }
+    
+    
+    func touchIDAuth(){
+        let authContext = LAContext()
+        var error: NSError?
+        
+        if authContext.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error){
+            
+            authContext.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: "Use your Touch ID to login", reply: { (complete, error) -> Void in
+                dispatch_async(dispatch_get_main_queue(), {
+                    if complete {
+                        print("Mert1")
+                    }
+                    else{
+                        print("Mert2")
+                    }
+                })
+                
+            })
+            
+        }
+        else{
+            
+        }
     }
     
     
