@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E10EC051DCA92B60044D2CC /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E10EC041DCA92B60044D2CC /* MainVC.swift */; };
+		4E10EC071DCA9A4A0044D2CC /* FolderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E10EC061DCA9A4A0044D2CC /* FolderVC.swift */; };
+		4E10EC091DCA9A5B0044D2CC /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E10EC081DCA9A5B0044D2CC /* CameraVC.swift */; };
+		4E10EC0B1DCA9A640044D2CC /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E10EC0A1DCA9A640044D2CC /* SettingsVC.swift */; };
 		4E3D5AEA1DC746A8005AD4E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3D5AE91DC746A8005AD4E8 /* AppDelegate.swift */; };
 		4E3D5AEC1DC746A8005AD4E8 /* MenuControllerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3D5AEB1DC746A8005AD4E8 /* MenuControllerVC.swift */; };
 		4E3D5AEF1DC746A9005AD4E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E3D5AED1DC746A9005AD4E8 /* Main.storyboard */; };
@@ -28,6 +32,10 @@
 /* Begin PBXFileReference section */
 		2371E3E167178DC496DC27A1 /* Pods-Keep Safe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keep Safe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Keep Safe/Pods-Keep Safe.debug.xcconfig"; sourceTree = "<group>"; };
 		3FB8035C1060D68935C1503C /* Pods-Keep Safe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keep Safe.release.xcconfig"; path = "Pods/Target Support Files/Pods-Keep Safe/Pods-Keep Safe.release.xcconfig"; sourceTree = "<group>"; };
+		4E10EC041DCA92B60044D2CC /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		4E10EC061DCA9A4A0044D2CC /* FolderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderVC.swift; sourceTree = "<group>"; };
+		4E10EC081DCA9A5B0044D2CC /* CameraVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		4E10EC0A1DCA9A640044D2CC /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		4E3D5AE61DC746A8005AD4E8 /* Keep Safe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keep Safe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3D5AE91DC746A8005AD4E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E3D5AEB1DC746A8005AD4E8 /* MenuControllerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuControllerVC.swift; sourceTree = "<group>"; };
@@ -67,6 +75,29 @@
 				3FB8035C1060D68935C1503C /* Pods-Keep Safe.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		4E10EC021DCA8F110044D2CC /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				4E3D5AEB1DC746A8005AD4E8 /* MenuControllerVC.swift */,
+				4E5FDADC1DC7F4D20049592D /* Landing1VC.swift */,
+				4E65AB171DC894D900386870 /* GetStartedVC.swift */,
+				4E5FDADE1DC806310049592D /* RegisterVC.swift */,
+			);
+			name = Landing;
+			sourceTree = "<group>";
+		};
+		4E10EC031DCA8F240044D2CC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4E65AB191DC8954000386870 /* LoginVC.swift */,
+				4E10EC041DCA92B60044D2CC /* MainVC.swift */,
+				4E10EC061DCA9A4A0044D2CC /* FolderVC.swift */,
+				4E10EC081DCA9A5B0044D2CC /* CameraVC.swift */,
+				4E10EC0A1DCA9A640044D2CC /* SettingsVC.swift */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 		4E3D5ADD1DC746A8005AD4E8 = {
@@ -112,11 +143,8 @@
 		4EF3EC4D1DC8831B003C9A03 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4E3D5AEB1DC746A8005AD4E8 /* MenuControllerVC.swift */,
-				4E65AB191DC8954000386870 /* LoginVC.swift */,
-				4E5FDADC1DC7F4D20049592D /* Landing1VC.swift */,
-				4E5FDADE1DC806310049592D /* RegisterVC.swift */,
-				4E65AB171DC894D900386870 /* GetStartedVC.swift */,
+				4E10EC021DCA8F110044D2CC /* Landing */,
+				4E10EC031DCA8F240044D2CC /* Main */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -276,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EF3EC511DC88365003C9A03 /* Constants.swift in Sources */,
+				4E10EC051DCA92B60044D2CC /* MainVC.swift in Sources */,
 				4E3D5AEC1DC746A8005AD4E8 /* MenuControllerVC.swift in Sources */,
 				4EC1FB141DC941F100B6C7E3 /* PhotoManager.swift in Sources */,
 				4E65AB1C1DC8B72B00386870 /* SafeBrain.swift in Sources */,
@@ -283,9 +312,12 @@
 				4E5FDADF1DC806310049592D /* RegisterVC.swift in Sources */,
 				4E3D5AEA1DC746A8005AD4E8 /* AppDelegate.swift in Sources */,
 				4E5FDADD1DC7F4D20049592D /* Landing1VC.swift in Sources */,
+				4E10EC091DCA9A5B0044D2CC /* CameraVC.swift in Sources */,
 				4E65AB181DC894D900386870 /* GetStartedVC.swift in Sources */,
 				4EC1FB121DC93C5000B6C7E3 /* User.swift in Sources */,
 				4EF3EC531DC883A4003C9A03 /* APIClient.swift in Sources */,
+				4E10EC071DCA9A4A0044D2CC /* FolderVC.swift in Sources */,
+				4E10EC0B1DCA9A640044D2CC /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

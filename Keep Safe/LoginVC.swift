@@ -234,10 +234,12 @@ class LoginVC: UIViewController, UITextFieldDelegate{
             authContext.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: "Use your Touch ID to login", reply: { (complete, error) -> Void in
                 dispatch_async(dispatch_get_main_queue(), {
                     if complete {
-                        print("Mert1")
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = storyboard.instantiateViewControllerWithIdentifier("mainVC") as! MainVC
+                        self.presentViewController(vc, animated: true, completion: nil)
                     }
                     else{
-                        print("Mert2")
+                        //Cancel
                     }
                 })
                 

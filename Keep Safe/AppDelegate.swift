@@ -20,13 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Is user registered?
         if let email = userDefaults.objectForKey("email"){
             print("girdim")
-            self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("loginVC")
+            self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("mainVC")
         }
-        else{
-            print("girdim1")
-            self.window?.rootViewController = UIStoryboard(name: "Landing", bundle: nil).instantiateViewControllerWithIdentifier("menuControllerVC")
-        }
-        
+
         return true
     }
     
