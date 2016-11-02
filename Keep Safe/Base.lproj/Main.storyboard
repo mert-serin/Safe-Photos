@@ -207,11 +207,53 @@
                                     <frame key="frameInset"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Plf-Za-E5z"/>
                                 </constraints>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cse-nn-qJq">
+                                <frame key="frameInset" minY="44" width="375" height="623"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="85" id="nCf-jw-TAH" customClass="FolderTableViewCell" customModule="Keep_Safe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="85"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nCf-jw-TAH" id="xmu-il-eAh">
+                                            <frame key="frameInset" width="342" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JFy-DJ-DgT">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="JFy-DJ-DgT" secondAttribute="height" multiplier="1:1" id="blQ-tV-5Nn"/>
+                                                        <constraint firstAttribute="width" constant="68" id="xz8-i3-ffs"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTK-fx-lYP">
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JFy-DJ-DgT" firstAttribute="bottom" secondItem="xmu-il-eAh" secondAttribute="bottomMargin" id="5Ih-Z8-QVe"/>
+                                                <constraint firstItem="JFy-DJ-DgT" firstAttribute="top" secondItem="xmu-il-eAh" secondAttribute="topMargin" id="Fa3-cL-9SI"/>
+                                                <constraint firstAttribute="trailing" secondItem="dTK-fx-lYP" secondAttribute="trailing" id="Jas-2V-KgX"/>
+                                                <constraint firstItem="JFy-DJ-DgT" firstAttribute="bottom" secondItem="dTK-fx-lYP" secondAttribute="bottom" id="LXe-n9-Ih9"/>
+                                                <constraint firstItem="dTK-fx-lYP" firstAttribute="leading" secondItem="JFy-DJ-DgT" secondAttribute="trailing" constant="8" symbolic="YES" id="efo-EJ-xxP"/>
+                                                <constraint firstItem="JFy-DJ-DgT" firstAttribute="top" secondItem="dTK-fx-lYP" secondAttribute="top" id="hzz-jf-gak"/>
+                                                <constraint firstItem="JFy-DJ-DgT" firstAttribute="leading" secondItem="xmu-il-eAh" secondAttribute="leadingMargin" id="lQ6-7j-sXb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="folderImageView" destination="JFy-DJ-DgT" id="gUA-87-iwi"/>
+                                            <outlet property="folderLabel" destination="dTK-fx-lYP" id="XdJ-Jc-uci"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -222,6 +264,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Pqb-5D-qUw"/>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="folderTableView" destination="Cse-nn-qJq" id="yTG-26-wHo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O1d-Yv-Qw9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -338,7 +383,7 @@
                     <view key="view" contentMode="scaleToFill" id="Db8-gJ-y9b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="clM-op-dnK"/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -358,7 +403,7 @@
                     <view key="view" contentMode="scaleToFill" id="WBO-zp-9W0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="MW0-a7-Jvk"/>
                     <nil key="simulatedStatusBarMetrics"/>

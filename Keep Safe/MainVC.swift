@@ -17,6 +17,43 @@ class MainVC: UIViewController,UIScrollViewDelegate {
         super.viewDidLoad()
 
         menuSV.delegate = self
+        
+        //Initialize using Unique ID for the View
+        let V1 = self.storyboard?.instantiateViewControllerWithIdentifier("mNVC1")
+        //Add initialized view to main view and its scroll view also set bounds
+        self.addChildViewController(V1!)
+        self.menuSV.addSubview(V1!.view)
+        V1!.didMoveToParentViewController(self)
+        V1!.view.frame = menuSV.bounds
+        
+        //Create frame for the view and define its urigin point with respect to View 1
+        var V1Frame: CGRect = V1!.view.frame
+        V1Frame.origin.x = 0
+        V1!.view.frame = V1Frame
+        
+        
+        //Initialize using Unique ID for the View
+        let V2 = self.storyboard?.instantiateViewControllerWithIdentifier("mNVC3")
+        //Add initialized view to main view and its scroll view also set bounds
+        self.addChildViewController(V2!)
+        self.menuSV.addSubview(V2!.view)
+        V2!.didMoveToParentViewController(self)
+        V2!.view.frame = menuSV.bounds
+        
+        //Create frame for the view and define its urigin point with respect to View 1
+        var V2Frame: CGRect = V2!.view.frame
+        V2Frame.origin.x = self.view.frame.width
+        V2!.view.frame = V2Frame
+        
+
+        
+        //The width is set here as we are dealing with Horizontal Scroll
+        //The Width is x3 as there are 3 sub views in all
+        self.menuSV.contentSize = CGSizeMake((self.view.frame.width) * 2, (self.view.frame.height))
+        
+        //The offset values are for telling where the scroll view sees its x and y point as origin
+        //try setting the value to 2, and 3 to feel the difference----this value here
+        self.menuSV.contentOffset = CGPoint(x: 0, y: (self.view.frame.height))
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,9 +64,10 @@ class MainVC: UIViewController,UIScrollViewDelegate {
     
     
     
+    
     //MARK: folderButtonAction ~ ScrollView Content 1
     @IBAction private func folderButtonAction(sender: UIButton) {
-        
+        self.menuSV.setContentOffset(CGPointMake(0, 0), animated: false)
         
     }
     
@@ -41,8 +79,17 @@ class MainVC: UIViewController,UIScrollViewDelegate {
     
     //MARK: settingsButtonAction ~ ScrollView Content 2
     @IBAction private func settingsButtonAction(sender: UIButton) {
+        self.menuSV.setContentOffset(CGPointMake(self.view.frame.width, 0), animated: false)
     
         
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return false
     }
     
 

@@ -11,6 +11,7 @@
 		4E10EC071DCA9A4A0044D2CC /* FolderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E10EC061DCA9A4A0044D2CC /* FolderVC.swift */; };
 		4E10EC091DCA9A5B0044D2CC /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E10EC081DCA9A5B0044D2CC /* CameraVC.swift */; };
 		4E10EC0B1DCA9A640044D2CC /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E10EC0A1DCA9A640044D2CC /* SettingsVC.swift */; };
+		4E10EC0E1DCAA7060044D2CC /* FolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E10EC0D1DCAA7060044D2CC /* FolderTableViewCell.swift */; };
 		4E3D5AEA1DC746A8005AD4E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3D5AE91DC746A8005AD4E8 /* AppDelegate.swift */; };
 		4E3D5AEC1DC746A8005AD4E8 /* MenuControllerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3D5AEB1DC746A8005AD4E8 /* MenuControllerVC.swift */; };
 		4E3D5AEF1DC746A9005AD4E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E3D5AED1DC746A9005AD4E8 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		4E10EC061DCA9A4A0044D2CC /* FolderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderVC.swift; sourceTree = "<group>"; };
 		4E10EC081DCA9A5B0044D2CC /* CameraVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		4E10EC0A1DCA9A640044D2CC /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		4E10EC0D1DCAA7060044D2CC /* FolderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderTableViewCell.swift; sourceTree = "<group>"; };
 		4E3D5AE61DC746A8005AD4E8 /* Keep Safe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keep Safe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3D5AE91DC746A8005AD4E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E3D5AEB1DC746A8005AD4E8 /* MenuControllerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuControllerVC.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		4E10EC031DCA8F240044D2CC /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				4E10EC0C1DCAA6F10044D2CC /* Cell */,
 				4E65AB191DC8954000386870 /* LoginVC.swift */,
 				4E10EC041DCA92B60044D2CC /* MainVC.swift */,
 				4E10EC061DCA9A4A0044D2CC /* FolderVC.swift */,
@@ -98,6 +101,14 @@
 				4E10EC0A1DCA9A640044D2CC /* SettingsVC.swift */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		4E10EC0C1DCAA6F10044D2CC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4E10EC0D1DCAA7060044D2CC /* FolderTableViewCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		4E3D5ADD1DC746A8005AD4E8 = {
@@ -306,6 +317,7 @@
 				4EF3EC511DC88365003C9A03 /* Constants.swift in Sources */,
 				4E10EC051DCA92B60044D2CC /* MainVC.swift in Sources */,
 				4E3D5AEC1DC746A8005AD4E8 /* MenuControllerVC.swift in Sources */,
+				4E10EC0E1DCAA7060044D2CC /* FolderTableViewCell.swift in Sources */,
 				4EC1FB141DC941F100B6C7E3 /* PhotoManager.swift in Sources */,
 				4E65AB1C1DC8B72B00386870 /* SafeBrain.swift in Sources */,
 				4E65AB1A1DC8954000386870 /* LoginVC.swift in Sources */,

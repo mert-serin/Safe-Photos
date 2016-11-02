@@ -8,28 +8,44 @@
 
 import UIKit
 
-class FolderVC: UIViewController {
+class FolderVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var folderTableView: UITableView!
+    var frame:CGRect?
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        folderTableView.delegate = self
+        folderTableView.dataSource = self
+        
+        frame = folderTableView.frame
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+}
+
+extension FolderVC{
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
     }
-    */
-
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! FolderTableViewCell
+        
+        cell.state = indexPath.row
+        
+        return cell
+        
+        
+        
+        
+    }
+    
 }
