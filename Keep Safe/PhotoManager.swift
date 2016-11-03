@@ -36,7 +36,7 @@ class PhotoManager{
     func getImageFromDisk(state:Int) -> String{
         let docs = getPath()
         if(state == 0){
-            let id = SafeBrain().getIDForGuest()
+            let id = SafeBrain().getIDForPhotos()
             let fullPath = docs + "/photos-\(id).jpg"
             return fullPath
         }
@@ -48,6 +48,34 @@ class PhotoManager{
         }
         
     }
+    
+    //State == 0 ~ Saved Photos - State == 1 ~ Wrong Password
+    func getPhotoURLArray(state:Int) -> [String]{
+        let docs = getPath()
+        var urlArray = [String]()
+        if(state == 0){
+            print("mert1")
+            let id = Int(SafeBrain().getIDForPhotos())!
+            for(var i = 0; i < id; ++i){
+                print("mert2")
+                let fullPath = docs + "/photos-\(i).jpg"
+                urlArray.append(fullPath)
+            }
+            return urlArray
+        }
+        else{
+            print("asd1")
+            let id = Int(SafeBrain().getIDForGuest())!
+            for(var i = 0; i<id; ++i){
+                print("asd")
+               let fullPath = docs + "/guest-\(i).jpg"
+                urlArray.append(fullPath)
+            }
+            return urlArray
+        }
+    }
+    
+    
     
     
     

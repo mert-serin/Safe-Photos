@@ -11,14 +11,19 @@ import UIKit
 class FolderVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var folderTableView: UITableView!
-    var frame:CGRect?
+    @IBOutlet weak var navBlurView: UIVisualEffectView!
+    
+    var state = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         folderTableView.delegate = self
         folderTableView.dataSource = self
         
-        frame = folderTableView.frame
+        navBlurView.layer.shadowColor = UIColor.blackColor().colorWithAlphaComponent(1).CGColor
+        navBlurView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        navBlurView.layer.shadowOpacity = 1
         
     }
 
@@ -26,6 +31,16 @@ class FolderVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "showFolderDetailSegue"){
+            let vc = segue.destinationViewController as! FolderDetailVC
+            print("Mert \(self.state)")
+            vc.state = self.state
+        }
+    }
+    
+
 
 }
 
@@ -43,9 +58,13 @@ extension FolderVC{
         
         return cell
         
-        
-        
-        
     }
     
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        self.state = indexPath.row
+        print("Mert \(state)")
+        performSegueWithIdentifier("showFolderDetailSegue", sender: nil)
+    }
 }
