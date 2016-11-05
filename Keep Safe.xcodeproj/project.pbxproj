@@ -26,6 +26,7 @@
 		4E65AB181DC894D900386870 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E65AB171DC894D900386870 /* GetStartedVC.swift */; };
 		4E65AB1A1DC8954000386870 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E65AB191DC8954000386870 /* LoginVC.swift */; };
 		4E65AB1C1DC8B72B00386870 /* SafeBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E65AB1B1DC8B72B00386870 /* SafeBrain.swift */; };
+		4EAE6E5D1DCE0B8600F37778 /* PhotoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAE6E5C1DCE0B8600F37778 /* PhotoDetailVC.swift */; };
 		4EC1FB121DC93C5000B6C7E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1FB111DC93C5000B6C7E3 /* User.swift */; };
 		4EC1FB141DC941F100B6C7E3 /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1FB131DC941F100B6C7E3 /* PhotoManager.swift */; };
 		4EF3EC511DC88365003C9A03 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3EC501DC88365003C9A03 /* Constants.swift */; };
@@ -57,6 +58,7 @@
 		4E65AB171DC894D900386870 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
 		4E65AB191DC8954000386870 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		4E65AB1B1DC8B72B00386870 /* SafeBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeBrain.swift; sourceTree = "<group>"; };
+		4EAE6E5C1DCE0B8600F37778 /* PhotoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailVC.swift; sourceTree = "<group>"; };
 		4EC1FB111DC93C5000B6C7E3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4EC1FB131DC941F100B6C7E3 /* PhotoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
 		4EF3EC501DC88365003C9A03 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				4E65AB191DC8954000386870 /* LoginVC.swift */,
 				4E10EC041DCA92B60044D2CC /* MainVC.swift */,
 				4E10EC061DCA9A4A0044D2CC /* FolderVC.swift */,
+				4EAE6E5C1DCE0B8600F37778 /* PhotoDetailVC.swift */,
 				4E637E4C1DCAB6C100B56FC1 /* FolderDetailVC.swift */,
 				4E10EC081DCA9A5B0044D2CC /* CameraVC.swift */,
 				4E10EC0A1DCA9A640044D2CC /* SettingsVC.swift */,
@@ -332,6 +335,7 @@
 				4E65AB1C1DC8B72B00386870 /* SafeBrain.swift in Sources */,
 				4E637E4D1DCAB6C100B56FC1 /* FolderDetailVC.swift in Sources */,
 				4E65AB1A1DC8954000386870 /* LoginVC.swift in Sources */,
+				4EAE6E5D1DCE0B8600F37778 /* PhotoDetailVC.swift in Sources */,
 				4E5FDADF1DC806310049592D /* RegisterVC.swift in Sources */,
 				4E3D5AEA1DC746A8005AD4E8 /* AppDelegate.swift in Sources */,
 				4E5FDADD1DC7F4D20049592D /* Landing1VC.swift in Sources */,

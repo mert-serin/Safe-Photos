@@ -12,6 +12,8 @@ class MainVC: UIViewController,UIScrollViewDelegate {
     
     
     @IBOutlet weak var menuSV: UIScrollView!
+    @IBOutlet weak var bottomBarView: UIView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +56,9 @@ class MainVC: UIViewController,UIScrollViewDelegate {
         //The offset values are for telling where the scroll view sees its x and y point as origin
         //try setting the value to 2, and 3 to feel the difference----this value here
         self.menuSV.contentOffset = CGPoint(x: 0, y: (self.view.frame.height))
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainVC.hideBottomBar(_:)),name:"hideBottomBar", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainVC.showBottomBar(_:)),name:"showBottomBar", object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,6 +88,27 @@ class MainVC: UIViewController,UIScrollViewDelegate {
     
         
     }
+    
+    
+    func showBottomBar(notification: NSNotification){
+        print("asd1")
+        
+        UIView.animateWithDuration(0.5, animations: {
+            self.bottomBarView.center.y = self.view.frame.height - 22
+        })
+        
+        
+        
+    }
+    
+    func hideBottomBar(notification: NSNotification){
+        print("asd2")
+        UIView.animateWithDuration(0.5, animations: {
+            self.bottomBarView.center.y = self.view.frame.height + 22
+        })
+        
+    }
+    
     
     override func prefersStatusBarHidden() -> Bool {
         return true

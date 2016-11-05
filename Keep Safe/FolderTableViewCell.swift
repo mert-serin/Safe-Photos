@@ -29,9 +29,8 @@ class FolderTableViewCell: UITableViewCell {
         else{
             folderLabel.text = "Wrong password photos"
             let url = PhotoManager().getImageFromDisk(1)
-            print(url)
-            print(UIImage(contentsOfFile: url))
-            folderImageView.hnk_setImageFromFile(url)
+
+            folderImageView.image = UIImage(contentsOfFile: url)?.RBSquareImage()
             folderImageView.layer.masksToBounds = true
             folderImageView.layer.cornerRadius = 10
             

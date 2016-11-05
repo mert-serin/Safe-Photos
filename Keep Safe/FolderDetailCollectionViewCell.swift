@@ -21,28 +21,27 @@ class FolderDetailCollectionViewCell: UICollectionViewCell {
     
     func loadDetails(){
         
-        print("Girdim Deneme \(url)")
+        
         
         
         
         imageView.image = UIImage(contentsOfFile: url!)?.RBSquareImage()
         
         
-        print(imageView.image)
+     
 
         
     }
     
     func resizeImage(url:String, newWidth: CGFloat) -> UIImage {
         let image = UIImage(contentsOfFile: url)
-        print(image)
         let scale = newWidth / image!.size.width
         let newHeight = image!.size.height * scale
         UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
         image!.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        print(newImage)
+    
         return newImage!
     }
 }

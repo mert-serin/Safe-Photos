@@ -14,6 +14,7 @@ class FolderDetailVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var collectionView: UICollectionView!
     
     var state = 0
+    var index = 0
     
     var photoURLArray = [String]()
     
@@ -39,6 +40,23 @@ class FolderDetailVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     
+    
+    @IBAction func backButtonAction() {
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "showPhotoDetailSegue"){
+            let vc = segue.destinationViewController as! PhotoDetailVC
+            print(photoURLArray[index])
+            vc.url = photoURLArray[index]
+        }
+    }
+    
+    
+    
+    
 
     
     
@@ -59,6 +77,11 @@ extension FolderDetailVC{
         
         return cell
         
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        self.index = indexPath.row
+        performSegueWithIdentifier("showPhotoDetailSegue", sender: nil)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
