@@ -12,6 +12,11 @@ class FolderDetailVC: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     @IBOutlet weak var navBlurView: UIVisualEffectView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var folderName: UILabel!
+    
+    
+    @IBOutlet weak var largePlusOutlet: UIButton!
+    @IBOutlet weak var plusOutlet: UIButton!
     
     var state = 0
     var index = 0
@@ -22,6 +27,13 @@ class FolderDetailVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if(state == 0){
+            folderName.text = "Photos"
+        }
+        else{
+            largePlusOutlet.hidden = true
+            plusOutlet.hidden = true
+        }
         collectionView.delegate = self
         collectionView.dataSource = self
 
@@ -29,21 +41,20 @@ class FolderDetailVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         navBlurView.layer.shadowOffset = CGSize(width: 0, height: 0)
         navBlurView.layer.shadowOpacity = 1
         
+        
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        print(state)
+        photoURLArray = []
         photoURLArray = PhotoManager().getPhotoURLArray(state)
-        print(photoURLArray.count)
         collectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
-    }
-    
-    
-    
-    @IBAction func backButtonAction() {
-        
-        self.navigationController?.popViewControllerAnimated(true)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -57,7 +68,20 @@ class FolderDetailVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     
+    @IBAction func backButtonAction(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    
+    //MARK: Show Gallery
+    @IBAction func plusButtonAction(sender: AnyObject) {
+        
+        
+        
+    }
+    
 
+    
     
     
 

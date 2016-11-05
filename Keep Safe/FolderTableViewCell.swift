@@ -25,6 +25,11 @@ class FolderTableViewCell: UITableViewCell {
         if(state == 0){
             //Load normal image
             folderLabel.text = "Photos"
+            let url = PhotoManager().getImageFromDisk(0)
+            
+            folderImageView.image = UIImage(contentsOfFile: url)?.RBSquareImage()
+            folderImageView.layer.masksToBounds = true
+            folderImageView.layer.cornerRadius = 10
         }
         else{
             folderLabel.text = "Wrong password photos"

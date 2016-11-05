@@ -23,12 +23,8 @@ class FolderDetailCollectionViewCell: UICollectionViewCell {
         
         
         
-        
-        
         imageView.image = UIImage(contentsOfFile: url!)?.RBSquareImage()
         
-        
-     
 
         
     }

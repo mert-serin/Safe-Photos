@@ -10,6 +10,8 @@ import UIKit
 import Haneke
 class PhotoDetailVC: UIViewController {
     
+    
+    
     @IBOutlet weak var imageView: UIImageView!
     
     var url = String()

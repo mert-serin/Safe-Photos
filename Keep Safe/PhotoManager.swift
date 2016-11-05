@@ -25,6 +25,17 @@ class PhotoManager{
         
     }
     
+    
+    func saveImageForPhotos(imageData:NSData) -> Bool{
+        
+        let id = SafeBrain().getIDForPhotos()
+        let fullPath = getPath() + "/photos-\(id).jpg"
+        var newID = Int(id)! + 1
+        userDefaults.setObject("\(newID)", forKey: "photoID")
+        return imageData.writeToFile(fullPath, atomically: false)
+        
+    }
+    
     func getPath() -> String{
         let paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var docs: String = paths[0] as! String
@@ -37,7 +48,7 @@ class PhotoManager{
         let docs = getPath()
         if(state == 0){
             let id = SafeBrain().getIDForPhotos()
-            let fullPath = docs + "/photos-\(id).jpg"
+            let fullPath = docs + "/photos-\(Int(id)!-1).jpg"
             return fullPath
         }
         else{

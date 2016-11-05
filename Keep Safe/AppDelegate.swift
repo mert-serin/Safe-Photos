@@ -17,14 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        //Is user registered?
-        if let email = userDefaults.objectForKey("email"){
-            self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("loginVC")
-        }
-        else{
-            self.window?.rootViewController = UIStoryboard(name: "Landing", bundle: nil).instantiateViewControllerWithIdentifier("menuControllerVC")
 
-        }
 
         return true
     }

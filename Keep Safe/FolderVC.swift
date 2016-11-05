@@ -26,6 +26,10 @@ class FolderVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         navBlurView.layer.shadowOpacity = 1
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        folderTableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
