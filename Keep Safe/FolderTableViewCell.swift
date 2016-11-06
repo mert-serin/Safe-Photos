@@ -30,6 +30,7 @@ class FolderTableViewCell: UITableViewCell {
             folderImageView.image = UIImage(contentsOfFile: photo.imageURL!)?.RBSquareImage()
             folderImageView.layer.masksToBounds = true
             folderImageView.layer.cornerRadius = 10
+                
             }
         }
         else{
@@ -38,6 +39,7 @@ class FolderTableViewCell: UITableViewCell {
             folderImageView.image = UIImage(contentsOfFile: photo.imageURL!)?.RBSquareImage()
             folderImageView.layer.masksToBounds = true
             folderImageView.layer.cornerRadius = 10
+                
             }
             
             
