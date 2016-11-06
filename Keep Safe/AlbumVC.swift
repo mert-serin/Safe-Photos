@@ -40,7 +40,18 @@ class AlbumVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
                         
                     }
                     else if(permission.rawValue == 3){
-                        self.listAlbums()
+                        
+                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                            self.listAlbums()
+                            dispatch_async(dispatch_get_main_queue()) {
+                                self.collectionView.reloadData()
+                                
+                            }
+                            
+                            
+                        }
+                        
+                        
                     }
                 })
             }

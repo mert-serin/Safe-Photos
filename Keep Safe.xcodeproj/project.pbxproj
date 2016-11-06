@@ -29,6 +29,9 @@
 		4E9442861DCE1C9500A5831F /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9442851DCE1C9500A5831F /* AlbumCollectionViewCell.swift */; };
 		4E9442881DCE1CA400A5831F /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9442871DCE1CA400A5831F /* GalleryCollectionViewCell.swift */; };
 		4E94428A1DCE24A300A5831F /* GalleryImageDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9442891DCE24A300A5831F /* GalleryImageDetailVC.swift */; };
+		4E94428D1DCF424E00A5831F /* Photos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E94428B1DCF424E00A5831F /* Photos.xcdatamodeld */; };
+		4E94428F1DCF544B00A5831F /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94428E1DCF544B00A5831F /* Photo.swift */; };
+		4E9442911DCF556600A5831F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9442901DCF556600A5831F /* CoreData.framework */; };
 		4EAE6E5D1DCE0B8600F37778 /* PhotoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAE6E5C1DCE0B8600F37778 /* PhotoDetailVC.swift */; };
 		4EAE6E5F1DCE1B9900F37778 /* AlbumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAE6E5E1DCE1B9900F37778 /* AlbumVC.swift */; };
 		4EAE6E611DCE1BA200F37778 /* GalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAE6E601DCE1BA200F37778 /* GalleryVC.swift */; };
@@ -66,6 +69,9 @@
 		4E9442851DCE1C9500A5831F /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		4E9442871DCE1CA400A5831F /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		4E9442891DCE24A300A5831F /* GalleryImageDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryImageDetailVC.swift; sourceTree = "<group>"; };
+		4E94428C1DCF424E00A5831F /* Photos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Photos.xcdatamodel; sourceTree = "<group>"; };
+		4E94428E1DCF544B00A5831F /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		4E9442901DCF556600A5831F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4EAE6E5C1DCE0B8600F37778 /* PhotoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailVC.swift; sourceTree = "<group>"; };
 		4EAE6E5E1DCE1B9900F37778 /* AlbumVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumVC.swift; sourceTree = "<group>"; };
 		4EAE6E601DCE1BA200F37778 /* GalleryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryVC.swift; sourceTree = "<group>"; };
@@ -81,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E9442911DCF556600A5831F /* CoreData.framework in Frameworks */,
 				E5292B810C7687E61A3FDB8F /* Pods_Keep_Safe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +181,7 @@
 				4E3D5AF01DC746A9005AD4E8 /* Assets.xcassets */,
 				4E3D5AF21DC746A9005AD4E8 /* LaunchScreen.storyboard */,
 				4E3D5AF51DC746A9005AD4E8 /* Info.plist */,
+				4E94428B1DCF424E00A5831F /* Photos.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -194,6 +202,7 @@
 				4EF3EC521DC883A4003C9A03 /* APIClient.swift */,
 				4E65AB1B1DC8B72B00386870 /* SafeBrain.swift */,
 				4EC1FB131DC941F100B6C7E3 /* PhotoManager.swift */,
+				4E94428E1DCF544B00A5831F /* Photo.swift */,
 				4EC1FB111DC93C5000B6C7E3 /* User.swift */,
 			);
 			name = Model;
@@ -211,6 +220,7 @@
 		ECBF41AE32C05055A8529CD8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4E9442901DCF556600A5831F /* CoreData.framework */,
 				DE58BA611CDC869FF8EF57FB /* Pods_Keep_Safe.framework */,
 			);
 			name = Frameworks;
@@ -348,7 +358,9 @@
 				4E10EC0E1DCAA7060044D2CC /* FolderTableViewCell.swift in Sources */,
 				4E9442881DCE1CA400A5831F /* GalleryCollectionViewCell.swift in Sources */,
 				4EC1FB141DC941F100B6C7E3 /* PhotoManager.swift in Sources */,
+				4E94428F1DCF544B00A5831F /* Photo.swift in Sources */,
 				4E65AB1C1DC8B72B00386870 /* SafeBrain.swift in Sources */,
+				4E94428D1DCF424E00A5831F /* Photos.xcdatamodeld in Sources */,
 				4EAE6E5F1DCE1B9900F37778 /* AlbumVC.swift in Sources */,
 				4E637E4D1DCAB6C100B56FC1 /* FolderDetailVC.swift in Sources */,
 				4E65AB1A1DC8954000386870 /* LoginVC.swift in Sources */,
@@ -534,6 +546,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4E94428B1DCF424E00A5831F /* Photos.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4E94428C1DCF424E00A5831F /* Photos.xcdatamodel */,
+			);
+			currentVersion = 4E94428C1DCF424E00A5831F /* Photos.xcdatamodel */;
+			path = Photos.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4E3D5ADE1DC746A8005AD4E8 /* Project object */;
 }

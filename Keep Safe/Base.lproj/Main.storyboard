@@ -220,7 +220,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="1eg-xi-bWw" secondAttribute="height" multiplier="359:28" id="252-5f-G7J"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Bangers-Regular" family="Bangers" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Bangers-Regular" family="Bangers" pointSize="21"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -254,7 +254,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTK-fx-lYP">
-                                                    <fontDescription key="fontDescription" name="Bangers-Regular" family="Bangers" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="Bangers-Regular" family="Bangers" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -669,14 +669,6 @@
                                     <frame key="frameInset"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1B-9Q-dWs">
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="s1B-9Q-dWs" secondAttribute="height" multiplier="359:28" constant="-72" id="or5-n8-DCk"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Bangers-Regular" family="Bangers" pointSize="17"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSP-R3-5Op">
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="jSP-R3-5Op" secondAttribute="height" multiplier="1:1" id="6c3-Pg-cyY"/>
@@ -686,16 +678,33 @@
                                                 <action selector="backButtonAction:" destination="mBf-4b-tBW" eventType="touchUpInside" id="UQw-88-Dpj"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zf-c6-voi">
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="8zf-c6-voi" secondAttribute="height" multiplier="1:1" id="y7Z-Ho-AeW"/>
+                                            </constraints>
+                                            <state key="normal" backgroundImage="share"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vy1-9k-Vvk">
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="vy1-9k-Vvk" secondAttribute="height" multiplier="59:44" id="7yF-Y9-mO9"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="deleteShareAction:" destination="mBf-4b-tBW" eventType="touchUpInside" id="gVz-b5-mtQ"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="jSP-R3-5Op" firstAttribute="top" secondItem="s1B-9Q-dWs" secondAttribute="top" id="ARH-EB-2es"/>
+                                        <constraint firstItem="8zf-c6-voi" firstAttribute="top" secondItem="Z45-YD-2Cm" secondAttribute="top" constant="8" id="1Vj-iE-9si"/>
+                                        <constraint firstItem="jSP-R3-5Op" firstAttribute="bottom" secondItem="8zf-c6-voi" secondAttribute="bottom" id="1pW-qZ-Gc1"/>
                                         <constraint firstItem="jSP-R3-5Op" firstAttribute="leading" secondItem="Z45-YD-2Cm" secondAttribute="leadingMargin" id="FA6-JB-aV8"/>
-                                        <constraint firstItem="jSP-R3-5Op" firstAttribute="bottom" secondItem="s1B-9Q-dWs" secondAttribute="bottom" id="HVD-1b-hcf"/>
-                                        <constraint firstAttribute="trailing" secondItem="s1B-9Q-dWs" secondAttribute="trailing" constant="44" id="QjG-08-czd"/>
-                                        <constraint firstItem="s1B-9Q-dWs" firstAttribute="top" secondItem="Z45-YD-2Cm" secondAttribute="top" constant="8" id="Spn-fh-Y2l"/>
-                                        <constraint firstItem="s1B-9Q-dWs" firstAttribute="leading" secondItem="jSP-R3-5Op" secondAttribute="trailing" constant="8" symbolic="YES" id="Zgk-QH-9hh"/>
-                                        <constraint firstAttribute="bottom" secondItem="s1B-9Q-dWs" secondAttribute="bottom" constant="8" id="bWO-dk-agK"/>
-                                        <constraint firstItem="s1B-9Q-dWs" firstAttribute="leading" secondItem="Z45-YD-2Cm" secondAttribute="leading" constant="44" id="mQs-bE-Xrf"/>
+                                        <constraint firstAttribute="bottom" secondItem="vy1-9k-Vvk" secondAttribute="bottom" id="GS8-iQ-4Ht"/>
+                                        <constraint firstAttribute="trailing" secondItem="vy1-9k-Vvk" secondAttribute="trailing" id="KBt-q6-Qzm"/>
+                                        <constraint firstAttribute="trailing" secondItem="8zf-c6-voi" secondAttribute="trailing" constant="8" id="O3Z-u4-Fee"/>
+                                        <constraint firstItem="jSP-R3-5Op" firstAttribute="firstBaseline" secondItem="8zf-c6-voi" secondAttribute="firstBaseline" id="aod-Ir-V0B"/>
+                                        <constraint firstAttribute="bottom" secondItem="8zf-c6-voi" secondAttribute="bottom" constant="8" id="kWg-Pm-x3Q"/>
+                                        <constraint firstItem="jSP-R3-5Op" firstAttribute="baseline" secondItem="8zf-c6-voi" secondAttribute="baseline" id="myn-OR-s8m"/>
+                                        <constraint firstItem="vy1-9k-Vvk" firstAttribute="top" secondItem="Z45-YD-2Cm" secondAttribute="top" id="oJQ-jN-cQ5"/>
+                                        <constraint firstItem="jSP-R3-5Op" firstAttribute="top" secondItem="8zf-c6-voi" secondAttribute="top" id="vbt-Zl-EPf"/>
                                     </constraints>
                                 </view>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.495234375" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1067,6 +1076,7 @@
         <image name="photo-camera-2" width="512" height="512"/>
         <image name="plus" width="512" height="512"/>
         <image name="settings" width="512" height="512"/>
+        <image name="share" width="600" height="600"/>
         <image name="wallpaper" width="2560" height="1600"/>
     </resources>
 </document>

@@ -105,12 +105,6 @@ class GalleryImageDetailVC: UIViewController {
 
             
         }
-        
-        
-        
-        
-        
-
        
     }
 

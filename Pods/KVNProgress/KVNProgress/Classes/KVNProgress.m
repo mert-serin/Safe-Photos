@@ -1117,6 +1117,12 @@ static KVNProgressConfiguration *configuration;
 	}
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
+
 - (void)animateAppearance
 {
 	[UIView animateWithDuration:0.0f

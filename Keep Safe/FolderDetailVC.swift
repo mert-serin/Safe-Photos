@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FolderDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class FolderDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate{
 
     @IBOutlet weak var navBlurView: UIVisualEffectView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -21,8 +21,12 @@ class FolderDetailVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     var state = 0
     var index = 0
     
-    var photoURLArray = [String]()
+    var photoURLArray = [Photo]()
     
+    var isDeleteState = false
+    
+    var longPress:UILongPressGestureRecognizer?
+    var tapGesture:UITapGestureRecognizer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,13 +46,75 @@ class FolderDetailVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         navBlurView.layer.shadowOpacity = 1
         
         
+        longPress = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
+        longPress!.minimumPressDuration = 1
+        longPress!.delegate = self
+        longPress!.delaysTouchesBegan = true
+        self.collectionView?.addGestureRecognizer(longPress!)
+        
+        
+    }
+    
+    func handleLongPress(gestureRecognizer : UILongPressGestureRecognizer){
+        
+        
+        if(isDeleteState == false){
+            
+            
+            if (gestureRecognizer.state != UIGestureRecognizerState.Ended){
+                return
+            }
+            
+            let p = gestureRecognizer.locationInView(self.collectionView)
+            
+            if let indexPath : NSIndexPath = (self.collectionView?.indexPathForItemAtPoint(p))!{
+                print(indexPath.row)
+            }
+            
+            isDeleteState = true
+            
+            self.collectionView.removeGestureRecognizer(longPress!)
+            
+            tapGesture = UITapGestureRecognizer(target: self, action: "handleTapGesture:")
+            tapGesture!.numberOfTapsRequired = 1
+            self.collectionView.addGestureRecognizer(tapGesture!)
+            
+            
+            
+        }
+        
+    }
+    
+    func handleTapGesture(gestureRecognizer : UILongPressGestureRecognizer){
+        
+        
+        if(isDeleteState == true){
+            
+            
+            if (gestureRecognizer.state != UIGestureRecognizerState.Ended){
+                return
+            }
+            
+            let p = gestureRecognizer.locationInView(self.collectionView)
+            
+            if let indexPath : NSIndexPath = (self.collectionView?.indexPathForItemAtPoint(p)){
+                print(indexPath.row)
+            }
+            
+            
+            
+            
+            
+            
+            
+        }
+        
     }
     
     
     override func viewWillAppear(animated: Bool) {
-        print(state)
         photoURLArray = []
-        photoURLArray = PhotoManager().getPhotoURLArray(state)
+        photoURLArray = PhotoManager().fetchCoreData(state)
         collectionView.reloadData()
     }
 
@@ -60,8 +126,8 @@ class FolderDetailVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "showPhotoDetailSegue"){
             let vc = segue.destinationViewController as! PhotoDetailVC
-            print(photoURLArray[index])
-            vc.url = photoURLArray[index]
+            vc.photoObj = photoURLArray[index]
+            vc.state = state
         }
     }
     
@@ -95,15 +161,18 @@ extension FolderDetailVC{
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! FolderDetailCollectionViewCell
         
-        cell.url = photoURLArray[indexPath.row]
+        cell.url = photoURLArray[indexPath.row].imageURL!
         
         return cell
         
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        print(photoURLArray[indexPath.row].imageURL)
         self.index = indexPath.row
         performSegueWithIdentifier("showPhotoDetailSegue", sender: nil)
     }
