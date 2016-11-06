@@ -165,8 +165,10 @@ extension FolderDetailVC{
 
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! FolderDetailCollectionViewCell
         
-        cell.url = photoURLArray[indexPath.row].imageURL!
         
+        
+        cell.url = photoURLArray[indexPath.row].imageURL!
+        print("Mert \(cell.url!)")
         return cell
         
     }
@@ -184,5 +186,23 @@ extension FolderDetailVC{
         let height = frame.height
         
         return CGSizeMake(width / 3 - 4, width / 3 - 4)
+    }
+    
+    
+    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        
+        switch kind {
+            
+        case UICollectionElementKindSectionFooter:
+            let footerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "Footer", forIndexPath: indexPath) as! UICollectionReusableView
+            
+            footerView.backgroundColor = UIColor.greenColor();
+            return footerView
+            
+        default:
+            
+            assert(false, "Unexpected element kind")
+        }
     }
 }

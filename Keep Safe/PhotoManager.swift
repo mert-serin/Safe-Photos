@@ -17,12 +17,12 @@ class PhotoManager{
     func saveImageForUnplesantGuest(imageData:NSData) -> Bool{
 
         let id = SafeBrain().getIDForGuest()
-        
-        let fullPath = getPath() + "/guest-\(id).jpg"
+        let imagePath = "/guest-\(id).jpg"
+        let fullPath = getPath() + imagePath
         var newID = Int(id)! + 1
         userDefaults.setObject("\(newID)", forKey: "guestPhotoID")
         if(imageData.writeToFile(fullPath, atomically: false)){
-            if(saveData(Int(id)!, imageURL: fullPath, state: 1)){
+            if(saveData(Int(id)!, imageURL: imagePath, state: 1)){
                 return true
             }
             else{
@@ -39,15 +39,21 @@ class PhotoManager{
     
     func saveImageForPhotos(imageData:NSData) -> Bool{
         
+        print("save Image'a girdim")
         let id = SafeBrain().getIDForPhotos()
-        let fullPath = getPath() + "/photos-\(id).jpg"
+        let imagePath = "/photos-\(id).jpg"
+        let fullPath = getPath() + imagePath
         var newID = Int(id)! + 1
+        
         userDefaults.setObject("\(newID)", forKey: "photoID")
         if(imageData.writeToFile(fullPath, atomically: false)){
-            if(saveData(Int(id)!, imageURL: fullPath, state: 0)){
+            print("sakladım")
+            if(saveData(Int(id)!, imageURL: imagePath, state: 0)){
+                print("coredata tamam")
                 return true
             }
             else{
+                print("coredata olmadı")
                 return false
             }
         }
@@ -137,7 +143,7 @@ class PhotoManager{
     
     func fetchCoreData(state:Int) -> [Photo]{
         var photoArray = [Photo]()
-        
+        var path = getPath()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
@@ -161,7 +167,7 @@ class PhotoManager{
                 let imageURL = photo.valueForKey("imageURL") as! String
                 let imageID = photo.valueForKey("imageID") as! Int
                 
-                let photo = Photo(imageID: imageID, imageURL: imageURL)
+                let photo = Photo(imageID: imageID, imageURL: path+imageURL)
                 
                 photoArray.append(photo)
                 
@@ -176,7 +182,7 @@ class PhotoManager{
     
     
     func fetchLastPhotoObj(state:Int) -> Photo?{
-        
+        var path = getPath()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
@@ -200,7 +206,7 @@ class PhotoManager{
                 let imageURL = photo.valueForKey("imageURL") as! String
                 let imageID = photo.valueForKey("imageID") as! Int
                 
-                return Photo(imageID: imageID, imageURL: imageURL)
+                return Photo(imageID: imageID, imageURL: path+imageURL)
             }
             
             
@@ -248,7 +254,6 @@ class PhotoManager{
             
             return true
         } catch let error as NSError  {
-            
             return false
         }
         

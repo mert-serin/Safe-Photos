@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Keep Safe/FolderDetailCollectionViewCell.swift"
-            timestampString = "500054481.13333"
+            timestampString = "500133893.265932"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "loadDetails()"
             landmarkType = "7">
          </BreakpointContent>

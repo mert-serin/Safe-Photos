@@ -25,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = UIStoryboard(name: "Landing", bundle: nil).instantiateViewControllerWithIdentifier("menuControllerVC")
             
         }
+        
+        let value = UIInterfaceOrientation.Portrait.rawValue
+        UIDevice.currentDevice().setValue(value, forKey: "orientation")
+
 
         return true
     }

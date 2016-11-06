@@ -290,6 +290,10 @@ class LoginVC: UIViewController, UITextFieldDelegate{
     }
     
     
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
     
     
 

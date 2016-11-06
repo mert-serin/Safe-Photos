@@ -41,6 +41,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Keep Safe uses camera to take a photo unplesant guest</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Keep Safe needs to access gallery for choosing photo from gallery</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Bangers.ttf</string>
@@ -53,11 +55,11 @@
 	<array>
 		<string>armv7</string>
 	</array>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Keep Safe needs to access gallery for choosing photo from gallery</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

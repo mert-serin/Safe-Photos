@@ -22,6 +22,10 @@ class User{
         
     }
     
+    init(){
+        
+    }
+    
     
     
     //MARK: setUserDefaults
@@ -30,5 +34,17 @@ class User{
         userDefaults.setObject(self.password!, forKey: "password")
     }
     
+    
+    
+    func setPassword(password:String)->Bool{
+        userDefaults.setObject(password, forKey: "password")
+        return true
+    }
 
+    
+    func setEmail(email:String)->Bool{
+        userDefaults.setObject(email, forKey: "email")
+        return true
+    }
+    
 }

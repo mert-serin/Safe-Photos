@@ -22,24 +22,13 @@ class FolderDetailCollectionViewCell: UICollectionViewCell {
     func loadDetails(){
         
         
-        
-        imageView.image = UIImage(contentsOfFile: url!)?.RBSquareImage()
-        
+        print("Load details url = \(url!)")
+        print(UIImage(contentsOfFile: url!))
+        imageView.image = UIImage(contentsOfFile: url!)
 
         
     }
-    
-    func resizeImage(url:String, newWidth: CGFloat) -> UIImage {
-        let image = UIImage(contentsOfFile: url)
-        let scale = newWidth / image!.size.width
-        let newHeight = image!.size.height * scale
-        UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
-        image!.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-    
-        return newImage!
-    }
+
 }
 
 

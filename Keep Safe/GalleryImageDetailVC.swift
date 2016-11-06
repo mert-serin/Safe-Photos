@@ -84,19 +84,16 @@ class GalleryImageDetailVC: UIViewController {
                     
                     
                     },completionHandler: { success, error in
-                        if(success){
-                            dispatch_async(dispatch_get_main_queue()) {
-                                
-                                if let views = self.navigationController?.viewControllers{
-                                    let count = views.count
-                                    self.navigationController?.popToViewController(views[count-4], animated: true)
-                                }
-                                
-                                
+                        dispatch_async(dispatch_get_main_queue()) {
+                            
+                            if let views = self.navigationController?.viewControllers{
+                                let count = views.count
+                                self.navigationController?.popToViewController(views[count-4], animated: true)
                             }
                             
                             
                         }
+                        
                 })
             }
             else{

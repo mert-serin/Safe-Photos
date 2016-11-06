@@ -59,6 +59,9 @@ class MainVC: UIViewController,UIScrollViewDelegate {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainVC.hideBottomBar(_:)),name:"hideBottomBar", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainVC.showBottomBar(_:)),name:"showBottomBar", object: nil)
+        
+        let value = UIInterfaceOrientation.Portrait.rawValue
+        UIDevice.currentDevice().setValue(value, forKey: "orientation")
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,7 +94,7 @@ class MainVC: UIViewController,UIScrollViewDelegate {
     
     
     func showBottomBar(notification: NSNotification){
-        print("asd1")
+        
         
         UIView.animateWithDuration(0.5, animations: {
             self.bottomBarView.center.y = self.view.frame.height - 22
@@ -102,7 +105,7 @@ class MainVC: UIViewController,UIScrollViewDelegate {
     }
     
     func hideBottomBar(notification: NSNotification){
-        print("asd2")
+        
         UIView.animateWithDuration(0.5, animations: {
             self.bottomBarView.center.y = self.view.frame.height + 22
         })

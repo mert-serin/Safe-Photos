@@ -34,6 +34,7 @@ class FolderTableViewCell: UITableViewCell {
             }
         }
         else{
+            folderLabel.text = "Wrong Password Photos"
             if let photo = PhotoManager().fetchLastPhotoObj(1){
 
             folderImageView.image = UIImage(contentsOfFile: photo.imageURL!)?.RBSquareImage()
